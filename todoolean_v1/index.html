@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.3.0/css/flag-icon.min.css">
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>rest-todoolean</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-container">
+        <div class="todo-ux">
+          <input class="todo-input" type="text" name="" value="">
+          <button class="todo-add" type="button"><i class="fas fa-plus"></i> Aggiungi</button>
+          <select class="hours"></select>
+          <select class="minutes"></select>
+        </div>
+        <div class="todo-list"></div>
+      </div>
+    </div>
+
+    <script id="todoli-template" type="text/x-handlebars-template">
+      <li data-li="{{id}}"><span>{{text}}</span><span> {{time}}</span> <i class="fas fa-times todo-canc"></i></li>
+    </script>
+
+    <script id="option-template" type="text/x-handlebars-template">
+      <option value="{{value}}">{{value}}</option>
+    </script>
+
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
