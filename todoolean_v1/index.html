@@ -8,24 +8,35 @@
     <script src="https://momentjs.com/downloads/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment-with-locales.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>rest-todoolean</title>
   </head>
   <body>
     <div class="container">
       <div class="todo-container">
-        <div class="todo-ux">
-          <input class="todo-input" type="text" name="" value="">
-          <button class="todo-add" type="button"><i class="fas fa-plus"></i> Aggiungi</button>
-          <select class="hours"></select>
-          <select class="minutes"></select>
+        <div class="todo-title">
+          <h1>Todoolean <i class="fas fa-clipboard-list"></i></h1>
         </div>
-        <div class="todo-list"></div>
+        <div class="todo-ux">
+          <div class="input-btn">
+            <input class="todo-input" type="text" placeholder="Aggiungi un todo!">
+            <button class="todo-add" type="button"><i class="fas fa-plus"></i> <strong>AGGIUNGI</strong></button>
+          </div>
+          <div class="time">
+            <span><strong>ORARIO<strong></span>
+            <select class="hours"></select>
+            <select class="minutes"></select>
+          </div>
+        </div>
+        <div class="todo-list">
+          <ul class="todo"></ul>
+        </div>
       </div>
     </div>
 
     <script id="todoli-template" type="text/x-handlebars-template">
-      <li data-li="{{id}}"><span>{{text}}</span><span> {{time}}</span> <i class="fas fa-times todo-canc"></i></li>
+      <li class="reminder" data-li="{{id}}"><span class="time-span">{{time}}</span><span class="text-span">{{text}}</span> <i class="fas fa-times todo-canc"></i></li>
     </script>
 
     <script id="option-template" type="text/x-handlebars-template">

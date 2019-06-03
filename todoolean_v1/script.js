@@ -18,7 +18,7 @@ var timeSelect = {
 }
 
 function call_TodoAPI(methodType, todoText, todoTime, id){
-  $(".todo-list").empty();
+  $(".todo").empty();
   $.ajax({
     url: apiURL + undefinedCheck(id),
     method: methodType,
@@ -32,7 +32,7 @@ function call_TodoAPI(methodType, todoText, todoTime, id){
           todoli.text = obj[i].text;
           todoli.time = obj[i].time;
           console.log(obj);
-          $(".todo-list").append(listTemplate(todoli));
+          $(".todo").append(listTemplate(todoli));
         }
     },
     error: function() {
@@ -52,13 +52,11 @@ function undefinedCheck(check){
 call_TodoAPI("GET");
 
 function addTodoList(){
-  var lastId = $(".todo-list").find("li:last-child").attr("data-li");
-  console.log("lastId: " + lastId);
+  var lastId = $(".todo").find("li:last-child").attr("data-li");
   var putId = parseInt(lastId) + 1;
   if (typeof lastId == "undefined") {
     putId = 1;
   }
-  console.log("putId: " + putId);
   var todoText = $(".todo-input").val();
   var hours = $(".hours").val();
   var minutes = $(".minutes").val();
@@ -107,7 +105,6 @@ function setHours(range){
 
 function setMinutes(range){
   var timeSplit = 60 / range;
-  console.log("timeSplit: " + timeSplit);
   for (var i = 0; i < timeSplit; i++) {
       rangeTime = range * i;
       if (rangeTime < 10) {
